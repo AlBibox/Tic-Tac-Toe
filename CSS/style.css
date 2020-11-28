@@ -1,0 +1,195 @@
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Prompt', sans-serif;
+  background: #171717;
+  overflow-y: hidden;
+}
+
+h1, h3, p, span {
+  color: #fff;
+}
+
+button {
+  border-style: none;
+  text-decoration: none;
+  color: #0f0500;
+  background-color: #5e1c02;
+  font-family: 'Prompt', sans-serif;
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+}
+
+.container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 0.2fr 8fr;
+      grid-template-rows: 0.2fr 8fr;
+  -ms-grid-columns: auto;
+      grid-template-columns: auto;
+  justify-items: center;
+      grid-template-areas: "title" 
+ "content";
+}
+
+.container .title {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: title;
+}
+
+.container .content {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: content;
+  /*BLOCK 1*/
+  /*BLOCK 2*/
+  /*BLOCK 3*/
+  /*BLOCK 4*/
+}
+
+.container .content .gameMode {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (1fr)[2];
+      grid-template-rows: repeat(2, 1fr);
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  justify-items: center;
+      grid-template-areas: "intro intro"
+ "multiPlayer singlePlayer";
+}
+
+.container .content .gameMode h3 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: intro;
+}
+
+.container .content .gameMode .gameMode__mode[value=multiplayer] {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: multiPlayer;
+  -ms-grid-column-align: end;
+      justify-self: end;
+}
+
+.container .content .gameMode .gameMode__mode[value=singleplayer] {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: singlePlayer;
+  -ms-grid-column-align: start;
+      justify-self: start;
+}
+
+.container .content .inputs {
+  display: none;
+  -ms-grid-rows: (1fr)[2];
+      grid-template-rows: repeat(2, 1fr);
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  justify-items: center;
+  gap: 1rem;
+}
+
+.container .content .wrapper {
+  display: none;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: (1fr)[3];
+      grid-template-rows: repeat(3, 1fr);
+  height: 18rem;
+  width: 18rem;
+  background-color: #0f0500;
+  row-gap: 0.3rem;
+}
+
+.container .content .wrapper .row {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+  -webkit-column-gap: 0.3rem;
+          column-gap: 0.3rem;
+}
+
+.container .content .wrapper .row div {
+  border: none;
+  background: #5e1c02;
+  color: #a69a1e;
+  font-weight: 900;
+  font-size: 3.5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container .content .playerInfo {
+  display: -ms-grid;
+  display: grid;
+  justify-items: center;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: "playerOneInfo playerTwoInfo"
+ "turnInfo turnInfo"
+ "resultInfo resultInfo";
+}
+
+.container .content .playerInfo .playerInfo__1 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: playerOneInfo;
+  -ms-grid-column-align: start;
+      justify-self: start;
+}
+
+.container .content .playerInfo .playerInfo__2 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: playerTwoInfo;
+  -ms-grid-column-align: end;
+      justify-self: end;
+  text-align: right;
+}
+
+.container .content .playerInfo .playerInfo__turn {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: turnInfo;
+  color: #fff;
+  padding: 0.25rem;
+}
+
+.container .content .playerInfo .playerInfo__result {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: resultInfo;
+  color: #fff;
+  padding-bottom: 0.25rem;
+  font-weight: 900;
+}
+
+.container .content .resetWrapper {
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 1rem;
+}
+/*# sourceMappingURL=style.css.map */

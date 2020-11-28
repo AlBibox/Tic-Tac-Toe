@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,400;0,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="title">
+            <h1>TIC TAC TOE</h1>
+        </div>
+
+        <div class="content">
+            <div class="gameMode">
+                <h3>Select the game mode</h3>
+                <button class="gameMode__mode" value="multiplayer">TWO PLAYER</button>
+                <button class="gameMode__mode" value="singleplayer">ONE PLAYER</button>
+            </div>
+
+            <div class="inputs">
+                <div class="player">
+                    <span class="player__label">Player 1</span>
+                    <input type="text" placeholder="* Enter your name" class="player__name">
+                    <span class="player__sign">X</span>
+                </div>
+                <button class="submitPlayer">SUBMIT</button>
+            </div>
+            <div class="playerInfo">
+                <div class="playerInfo__1">
+                    <h3 class="playerInfo__1__name"></h3>
+                    <h3 class="playerInfo__1__score"></h3>
+                </div>
+                <div class="playerInfo__2">
+                    <h3 class="playerInfo__2__name"></h3>
+                    <h3 class="playerInfo__2__score"></h3>
+                </div>
+                <div class="playerInfo__turn"></div>
+                <div class="playerInfo__result"></div>
+
+            </div>
+            <div class="wrapper"></div>
+            <div class="resetWrapper">
+                <button class="resetButton">RESET</button>
+            </div>
+        </div> 
+    </div>
+    
+</body>
+<script src="script.js"></script>
+</html>

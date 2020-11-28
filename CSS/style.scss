@@ -1,0 +1,147 @@
+@import "./variables";
+
+html{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Prompt', sans-serif;
+    background: $mainColor;
+    overflow-y: hidden;
+}
+
+h1, h3, p, span{
+    color: $text;
+}
+
+button{
+    border-style: none;
+    text-decoration: none;
+    color: $button;
+    background-color: $buttonBackground;
+    font-family: 'Prompt', sans-serif;
+    font-weight: 700;
+    padding: 0.5rem 1rem;
+}
+
+.container{
+    display: grid;
+    grid-template-rows: 0.2fr 8fr;
+    grid-template-columns: auto;
+    justify-items: center;
+    grid-template-areas:
+    "title" 
+    "content";
+
+    .title{
+        grid-area: title;
+    }
+
+    .content{
+        grid-area: content;
+        /*BLOCK 1*/
+        .gameMode{
+            display: grid;
+            grid-template-rows: repeat(2, 1fr);
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            justify-items: center;
+            grid-template-areas:
+            "intro intro"
+            "multiPlayer singlePlayer";
+
+            h3{
+            grid-area: intro;
+            }
+            .gameMode__mode[value=multiplayer]{
+                grid-area: multiPlayer;
+                justify-self: end;
+            }
+            .gameMode__mode[value=singleplayer]{
+                grid-area: singlePlayer;
+                justify-self: start;
+            } 
+        }
+
+        /*BLOCK 2*/
+        .inputs{
+            display: none;
+            grid-template-rows: repeat(2, 1fr);
+            grid-template-columns: 1fr;
+            justify-items: center;
+            gap: 1rem;
+        }
+
+        /*BLOCK 3*/
+        .wrapper{
+            display: none;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(3, 1fr);
+            height: 18rem;
+            width: 18rem;
+            background-color: $gameBoardBorder;
+            row-gap: 0.3rem;
+            .row{
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: 1fr;
+                column-gap: 0.3rem;
+                div{
+                    border: none;
+                    background: $gameBoard;
+                    color: $gameBoardPlay;
+                    font-weight: 900;
+                    font-size: 3.5em;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    
+                    
+                    
+                }
+            }
+        }
+        /*BLOCK 4*/
+        .playerInfo{
+            display: grid;
+            justify-items: center;
+            grid-template-rows: auto;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas: 
+            "playerOneInfo playerTwoInfo"
+            "turnInfo turnInfo"
+            "resultInfo resultInfo";
+
+            .playerInfo__1{
+                grid-area: playerOneInfo;
+                justify-self: start;
+            }
+            .playerInfo__2{
+                grid-area: playerTwoInfo;
+                justify-self: end;
+                text-align: right;
+            }
+            .playerInfo__turn{
+                grid-area: turnInfo;
+                color: $text;
+                padding: 0.25rem;
+            }
+            .playerInfo__result{
+                grid-area: resultInfo;
+                color: $text;
+                padding-bottom: 0.25rem;
+                font-weight: 900;
+            }
+
+
+        }
+
+        .resetWrapper{
+            display: none;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+    }
+}
+
+
